@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+data/
+uploads/
+coverage/
+*.tsbuildinfo
+*.tfstate
+*.tfstate.*
+.terraform/
+*.tfvars
+sender.zip
