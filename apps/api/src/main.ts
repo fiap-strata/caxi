@@ -22,6 +22,7 @@ import { AppController } from './http';
 import { describeApi } from './openapi';
 import { OrdersController, OrdersService } from './orders';
 import { PersistenceModule, AccessModule, PhotosModule, CatalogModule } from './modules';
+import { applicationOrigins, assertProductionConfiguration } from './runtime';
 @Module({
   imports: [
     TypeOrmModule.forRoot(databaseOptions()),
@@ -37,16 +38,8 @@ import { PersistenceModule, AccessModule, PhotosModule, CatalogModule } from './
 })
 class AppModule {}
 export async function createApp() {
-  if (
-    process.env.NODE_ENV === 'production' &&
-    (process.env.AUTH_PROVIDER !== 'cognito' ||
-      !process.env.ADMIN_KEY ||
-      process.env.ADMIN_KEY.length < 32 ||
-      !process.env.COGNITO_CLIENT_ID ||
-      !process.env.COGNITO_USER_POOL_ID ||
-      !process.env.APP_ORIGIN?.startsWith('https://'))
-  )
-    throw new Error('Configuração de produção incompleta. Consulte README.');
+  assertProductionConfiguration();
+  const origins = applicationOrigins();
   const app = await NestFactory.create(AppModule, {
     logger: process.env.NODE_ENV === 'test' ? false : ['error', 'warn', 'log'],
   });
@@ -56,12 +49,18 @@ export async function createApp() {
     if (
       !['GET', 'HEAD', 'OPTIONS'].includes(req.method) &&
       req.headers.origin &&
-      req.headers.origin !== (process.env.APP_ORIGIN || 'http://127.0.0.1:5173')
+      !origins.has(req.headers.origin)
     )
       return _res.status(403).json({ statusCode: 403, message: 'Origem não permitida.' });
     next();
   });
-  app.enableCors({ origin: process.env.APP_ORIGIN || 'http://127.0.0.1:5173', credentials: true });
+  app.enableCors({
+    origin: (
+      origin: string | undefined,
+      callback: (error: Error | null, allow?: boolean) => void,
+    ) => callback(null, !origin || origins.has(origin)),
+    credentials: true,
+  });
   app.use(
     '/uploads',
     express.static(resolve(process.cwd(), 'uploads'), {
@@ -76,7 +75,7 @@ export async function createApp() {
     new DocumentBuilder()
       .setTitle('Caxi · ERP da barraca')
       .setDescription(
-        'Sessão por cookie; mutações autenticadas exigem X-CSRF-Token retornado por /auth/session. Modo demo nunca permitido em produção.',
+        'Sessão por cookie; mutações autenticadas exigem X-CSRF-Token retornado por /auth/session. A demonstração acadêmica exige CAXI_DEMO_MODE explícito.',
       )
       .setVersion('1.0')
       .addCookieAuth('caxi_session', { type: 'apiKey' }, 'cookie')
@@ -87,7 +86,17 @@ export async function createApp() {
   await app.init();
   return app;
 }
-if (require.main === module)
+// Initialize once per function instance, including concurrent cold-start requests.
+let server: ReturnType<typeof createApp> | undefined;
+export default async function handler(req: express.Request, res: express.Response) {
+  const app = await (server ??= createApp().catch((error) => {
+    server = undefined;
+    throw error;
+  }));
+  return app.getHttpAdapter().getInstance()(req, res);
+}
+// Local CLI commands listen on a port; Vercel calls the default handler above.
+if (require.main === module && process.env.VERCEL !== '1')
   createApp()
     .then((app) => app.listen(Number(process.env.PORT || 3001), process.env.HOST || '127.0.0.1'))
     .catch((error) => {

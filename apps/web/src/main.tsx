@@ -274,7 +274,8 @@ function App() {
       </header>
       {demo ? (
         <div className="demo-banner">
-          <span className="demo-dot" /> Versão de teste · não envia mensagens
+          <span className="demo-dot" /> Demonstração acadêmica · dados temporários · não envia
+          mensagens
         </div>
       ) : null}
       {stage === 'welcome' && error ? <Notice tone="error">{error}</Notice> : null}
@@ -727,8 +728,8 @@ function App() {
                         onChange={(e) => {
                           const file = e.target.files?.[0];
                           if (!file) return;
-                          if (file.size > 5 * 1024 * 1024) {
-                            setError('Essa foto é muito grande. Tente outra.');
+                          if (file.size > 4 * 1024 * 1024) {
+                            setError('Essa foto é muito grande. Use uma foto de até 4 MB.');
                             return;
                           }
                           run(async () => {

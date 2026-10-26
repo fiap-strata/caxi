@@ -1,0 +1,28 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "api": {
+      "root": "apps/api",
+      "framework": "nestjs",
+      "installCommand": "cd ../.. && npm ci --include=dev",
+      "buildCommand": "npm run build -w @caxi/domain && npm run build -w @caxi/api",
+      "outputDirectory": "dist",
+      "devCommand": "npm run build -w @caxi/domain && npm run dev -w @caxi/api"
+    },
+    "web": {
+      "root": "apps/web",
+      "framework": "vite",
+      "installCommand": "cd ../.. && npm ci --include=dev",
+      "rewrites": [
+        { "source": "/design-system", "destination": "/index.html" },
+        { "source": "/b/(.*)", "destination": "/index.html" }
+      ]
+    }
+  },
+  "rewrites": [
+    { "source": "/api", "destination": { "service": "api" } },
+    { "source": "/api/(.*)", "destination": { "service": "api" } },
+    { "source": "/uploads/(.*)", "destination": { "service": "api" } },
+    { "source": "/(.*)", "destination": { "service": "web" } }
+  ]
+}

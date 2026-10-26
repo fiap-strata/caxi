@@ -1,6 +1,8 @@
 import { EntitySchema, MigrationInterface, QueryRunner, Table } from 'typeorm';
 import { resolve } from 'node:path';
 import { mkdirSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { academicDemo } from './runtime';
 export class RecordEntity {
   id!: string;
   kind!: string;
@@ -53,8 +55,16 @@ export function databaseOptions(): any {
   };
   if (process.env.DATABASE_DRIVER === 'postgres')
     return { ...common, type: 'postgres', url: process.env.DATABASE_URL };
-  if (process.env.NODE_ENV === 'production') throw new Error('Produção requer PostgreSQL.');
-  const dir = resolve(process.cwd(), 'data');
+  if (process.env.NODE_ENV === 'production' && !academicDemo())
+    throw new Error('Produção requer PostgreSQL.');
+  const dir = academicDemo() ? resolve(tmpdir(), 'caxi-demo') : resolve(process.cwd(), 'data');
   mkdirSync(dir, { recursive: true });
-  return { ...common, type: 'sqljs', location: resolve(dir, 'caxi.sqlite'), autoSave: true };
+  return {
+    ...common,
+    type: 'sqljs',
+    // Static resolution ensures Vercel includes SQLite's WASM asset in the function bundle.
+    sqlJsConfig: { locateFile: () => require.resolve('sql.js/dist/sql-wasm.wasm') },
+    location: resolve(dir, 'caxi.sqlite'),
+    autoSave: true,
+  };
 }

@@ -25,7 +25,7 @@ import { resolve } from 'node:path';
 import { AuthService, safeEqual, Interest } from './auth';
 import { StallsService, ProductsService } from './products';
 import { Store } from './store';
-import { PhotosService } from './photos';
+import { MAX_PHOTO_BYTES, PhotosService } from './photos';
 const objectBody = { schema: { type: 'object' as const, additionalProperties: true } };
 @ApiTags('Caxi')
 @Controller('api')
@@ -163,7 +163,7 @@ export class AppController {
     }));
   }
   @Post('uploads')
-  @UseInterceptors(FileInterceptor('file', { limits: { fileSize: 5 * 1024 * 1024, files: 1 } }))
+  @UseInterceptors(FileInterceptor('file', { limits: { fileSize: MAX_PHOTO_BYTES, files: 1 } }))
   async upload(@Req() req: Request, @UploadedFile() file?: Express.Multer.File) {
     return this.photos.upload(await this.user(req), file);
   }

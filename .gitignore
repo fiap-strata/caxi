@@ -12,3 +12,4 @@ coverage/
 .terraform/
 *.tfvars
 sender.zip
+.vercel/

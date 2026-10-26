@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { Store } from './store';
 import { AuthService } from './auth';
-import { LocalPhotoStorage, PhotosService } from './photos';
+import { PHOTO_STORAGE, createPhotoStorage, PhotosService } from './photos';
 import { StallsService, ProductsService } from './products';
 @Module({ providers: [Store], exports: [Store] })
 export class PersistenceModule {}
@@ -9,7 +9,7 @@ export class PersistenceModule {}
 export class AccessModule {}
 @Module({
   imports: [PersistenceModule],
-  providers: [LocalPhotoStorage, PhotosService],
+  providers: [{ provide: PHOTO_STORAGE, useFactory: createPhotoStorage }, PhotosService],
   exports: [PhotosService],
 })
 export class PhotosModule {}

@@ -27,7 +27,7 @@ Mutações autenticadas exigem `X-CSRF-Token`. O identificador da barraca no cat
 | PUT | `/stalls/mine` | Salva nome e descrição |
 | GET / POST | `/products` | Lista / cria produto |
 | PATCH | `/products/:id` | Edita produto com versão atual |
-| POST | `/uploads` | Multipart `file`, JPG/PNG/WebP até 5 MB |
+| POST | `/uploads` | Multipart `file`, JPG/PNG/WebP até 4 MiB |
 | POST | `/stalls/mine/publish` | Publica com produto completo e disponível |
 | GET | `/catalog/:id` | Oferta pública, sem quantidade exata de estoque |
 | POST | `/events/shared` | Registra ação de compartilhamento; não comprova envio |

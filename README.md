@@ -25,6 +25,15 @@ Abra **http://localhost:8080**. Banco e fotos ficam em volumes. Para encerrar pr
 
 Os dois ambientes acima são de **demonstração**. O código de acesso é mostrado na tela e nenhum OTP é enviado. A configuração real Cognito/WhatsApp está separada em [infrastructure/README.md](infrastructure/README.md); não há deploy AWS comprovado nesta entrega.
 
+Para Vercel, o [`vercel.json`](vercel.json) da raiz publica `api` e `web` como um
+único projeto com Services. Consulte [deploy na Vercel](docs/VERCEL.md) para rotas,
+builds, PostgreSQL/Cognito e fotos persistentes no Vercel Blob.
+Para a apresentação acadêmica, `CAXI_DEMO_MODE=true` habilita o acesso de teste e
+um banco temporário, sem provisionar AWS/PostgreSQL; os detalhes estão no mesmo guia.
+
+O [Gitflow e deploy contínuo](docs/GITFLOW.md) usa `develop` para previews e
+`main` para produção, pela integração nativa GitHub → Vercel.
+
 ## Experimentar o primeiro valor
 
 1. Na landing page, manifeste interesse com nome e WhatsApp.
