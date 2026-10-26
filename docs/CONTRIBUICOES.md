@@ -19,7 +19,7 @@ Os bancos SQLite, uploads de demonstração, caches, builds e `node_modules` con
 
 [Design System Caxi](https://www.figma.com/design/bayroMB0vsrd8sjHFWL2q9/Caxi--Design-System?node-id=0-1).
 
-O conector Figma informou falta de permissão de edição para criar a sessão; a tentativa de leitura pelo navegador recebeu HTTP 403. Não houve inspeção do canvas. A vitrine deriva dos componentes do repositório de Enzo; não se declara correspondência visual auditada com o Figma.
+O conector remoto informou falta de permissão e o navegador recebeu HTTP 403. O grupo forneceu depois uma exportação `.fig`, inspecionada localmente: [fonte e inventário](../design/README.md). A vitrine deriva dos componentes de Enzo; a comparação estrutural confirmou 55 de 57 valores de tokens, com diferenças de raio documentadas. A página de telas de referência está vazia. Não se declara auditoria visual completa das variantes.
 
 ## Documentos acadêmicos
 

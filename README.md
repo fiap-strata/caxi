@@ -55,7 +55,7 @@ O cenário demonstra a utilidade operacional: catálogo único, pedido legível 
 
 - Vitrine React: **[/design-system](http://127.0.0.1:5173/design-system)**, também disponível no ambiente Docker.
 - [Figma entregue por Enzo](https://www.figma.com/design/bayroMB0vsrd8sjHFWL2q9/Caxi--Design-System?node-id=0-1).
-- Componentes e tokens em `apps/web/src/enzo/`. O arquivo Figma não pôde ser inspecionado nesta consolidação por restrição de acesso; os componentes vieram do repositório de Enzo.
+- Componentes e tokens em `apps/web/src/enzo/`. A [exportação Figma e o inventário conferido](design/README.md) estão versionados em `design/`; 55 dos 57 valores de tokens coincidem, com duas diferenças de raio documentadas.
 - As telas entregues por Rafael/Maria foram preservadas; a aplicação ainda possui variações visuais entre essa base e a vitrine. A unificação integral do design system é uma evolução.
 
 ## Verificações
