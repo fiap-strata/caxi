@@ -1,0 +1,9 @@
+{
+  "name": "caxi-whatsapp-sender",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@aws-crypto/client-node": "^4.2.0",
+    "@aws-sdk/client-secrets-manager": "^3.900.0"
+  }
+}

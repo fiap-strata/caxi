@@ -1,0 +1,299 @@
+/* Readable labels, large touch targets and one clear action per step. */
+#product-title:focus {
+  outline: none;
+}
+.product-flow .upload-area {
+  min-height: 150px;
+}
+.product-flow .flow-top {
+  margin-bottom: 16px;
+}
+.product-flow .product-progress {
+  margin-bottom: 18px;
+}
+.top-note {
+  display: none;
+}
+.button {
+  min-height: 60px;
+  font-size: 18px;
+  padding: 17px 20px;
+}
+.text-button,
+.inline-button {
+  font-size: 16px;
+  min-height: 48px;
+}
+.flow h2 {
+  font-size: 32px;
+  line-height: 1.25;
+  margin: 0 0 26px;
+}
+.flow .intro,
+.hero-copy > p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+.field {
+  font-size: 17px;
+  gap: 10px;
+}
+.field input,
+.field select,
+.field textarea {
+  font-size: 20px;
+  min-height: 60px;
+}
+.field input::placeholder,
+.field textarea::placeholder {
+  font-size: 17px;
+}
+.field small,
+.save-hint,
+.privacy-note {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.notice {
+  font-size: 16px;
+}
+.form-foot {
+  font-size: 15px;
+}
+.demo-banner {
+  font-size: 12px;
+}
+.flow-top > span {
+  font-size: 12px;
+  letter-spacing: 0;
+}
+.flow-top {
+  margin-bottom: 22px;
+}
+.mobile-progress {
+  margin-bottom: 28px;
+}
+.hero {
+  padding-top: 36px;
+}
+.hero h1 {
+  font-size: clamp(38px, 7vw, 60px);
+}
+.hero-footnote {
+  font-size: 14px;
+}
+.hero-stats > span {
+  color: var(--forest);
+  text-align: center;
+  font-size: 15px;
+}
+.hero-stats svg {
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin: 0 auto 10px;
+}
+.hero-stats b {
+  display: inline;
+  font-size: 15px;
+  margin-right: 5px;
+}
+.hero-art {
+  margin-top: 0;
+}
+.optional-details {
+  margin: 0 0 24px;
+}
+.optional-details summary {
+  cursor: pointer;
+  min-height: 48px;
+  padding: 12px 0;
+  font-size: 16px;
+  color: var(--forest);
+}
+.optional-details[open] summary {
+  margin-bottom: 12px;
+}
+.product-progress {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0 0 24px;
+}
+.product-progress > span {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--muted);
+  border: 2px solid var(--line);
+  font-weight: 700;
+  font-size: 20px;
+}
+.product-progress > .current {
+  background: var(--forest);
+  border-color: var(--forest);
+  color: white;
+}
+.product-progress > .complete {
+  color: var(--forest);
+  background: #e2ecd5;
+  border-color: #e2ecd5;
+}
+.product-progress svg {
+  width: 23px;
+  height: 23px;
+}
+.product-reminder {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 28px;
+  font-size: 20px;
+  overflow-wrap: anywhere;
+}
+.product-reminder img {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+.upload-area {
+  min-height: 190px;
+  margin-bottom: 28px;
+}
+.upload-area b,
+.change-photo {
+  font-size: 17px;
+}
+.upload-icon {
+  width: 60px;
+  height: 60px;
+}
+.unit-options {
+  border: 0;
+  padding: 0;
+  margin: 0 0 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.unit-options legend {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.unit-options label {
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  background: white;
+  cursor: pointer;
+  position: relative;
+}
+.unit-options label.selected {
+  background: #eaf1df;
+  border-color: var(--forest);
+}
+.unit-options input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--forest);
+}
+.unit-symbol {
+  font-size: 27px;
+  font-weight: 700;
+  color: var(--forest);
+}
+.quantity-control {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr) 52px;
+  align-items: start;
+  gap: 10px;
+  margin: 15px 0 30px;
+}
+.quantity-control > button {
+  display: grid;
+  place-items: center;
+  height: 56px;
+  margin-top: 34px;
+  border: 1px solid var(--forest);
+  border-radius: 12px;
+  background: var(--forest);
+  color: white;
+}
+.quantity-control .field {
+  text-align: center;
+  margin: 0;
+  font-size: 15px;
+}
+.quantity-control input {
+  text-align: center;
+  font-size: 30px;
+  padding: 10px 4px;
+}
+.quantity-control small {
+  font-size: 13px;
+}
+.product-card {
+  grid-template-columns: 100px minmax(0, 1fr);
+}
+.product-card h3 {
+  font-size: 18px;
+  overflow-wrap: anywhere;
+}
+.product-card p {
+  font-size: 20px;
+}
+.product-card small,
+.product-status {
+  font-size: 14px;
+}
+.product-card img {
+  min-height: 140px;
+  height: 100%;
+}
+.catalog-heading p {
+  font-size: 16px;
+}
+.catalog-heading .eyebrow {
+  font-size: 13px;
+  letter-spacing: 0;
+}
+.review-actions .text-button {
+  font-size: 16px;
+}
+.done-links > a,
+.done-links .text-button {
+  font-size: 16px;
+}
+.published-card h3 {
+  font-size: 19px;
+}
+.live {
+  font-size: 15px;
+}
+.whatsapp-button {
+  margin-bottom: 12px;
+}
+@media (min-width: 1000px) {
+  .flow {
+    padding-top: 28px;
+  }
+  .flow h2 {
+    font-size: 36px;
+  }
+  .aside-steps b {
+    font-size: 18px;
+  }
+  .hero {
+    padding-top: 70px;
+  }
+}

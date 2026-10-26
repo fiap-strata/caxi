@@ -1,0 +1,75 @@
+/*
+ * Tokens do Design System do Caxi.
+ * Mesmos nomes das Variables do Figma (coleções Primitives, Semantic e Dimensions).
+ * Componentes usam só os tokens semânticos (--color-*, --space-*, --radius-*), nunca os primitivos.
+ */
+:root {
+  /* Primitivos: paleta bruta */
+  --neutral-0: #ffffff;
+  --neutral-50: #fafbf7;
+  --neutral-100: #f1f3e9;
+  --neutral-200: #dfe5dc;
+  --neutral-500: #898d87;
+  --neutral-600: #66716a;
+  --neutral-900: #203b33;
+  --green-50: #eef2e7;
+  --green-100: #e2ecd5;
+  --green-200: #d6e49b;
+  --green-500: #6e914c;
+  --green-600: #527b4c;
+  --green-700: #375e32;
+  --green-800: #173f35;
+  --green-900: #103229;
+  --green-success-50: #edf6e9;
+  --red-50: #fff0ed;
+  --red-200: #eecac4;
+  --red-700: #a3322c;
+
+  /* Semânticos: o papel de cada cor */
+  --color-bg-page: var(--neutral-50);
+  --color-bg-subtle: var(--neutral-100);
+  --color-bg-surface: var(--neutral-0);
+  --color-bg-brand: var(--green-800);
+  --color-bg-brand-hover: var(--green-900);
+  --color-bg-selected: var(--green-100);
+  --color-bg-highlight: var(--green-200);
+  --color-text-primary: var(--neutral-900);
+  --color-text-secondary: var(--neutral-600);
+  --color-text-on-brand: var(--neutral-0);
+  --color-text-brand: var(--green-800);
+  --color-text-accent: var(--green-600);
+  --color-border-default: var(--neutral-200);
+  --color-border-input: var(--neutral-500);
+  --color-border-selected: var(--green-800);
+  --color-focus-ring: var(--green-500);
+  --color-feedback-info-bg: var(--green-50);
+  --color-feedback-info-text: var(--neutral-900);
+  --color-feedback-success-bg: var(--green-success-50);
+  --color-feedback-success-text: var(--green-700);
+  --color-feedback-error-bg: var(--red-50);
+  --color-feedback-error-border: var(--red-200);
+  --color-feedback-error-text: var(--red-700);
+
+  /* Dimensões */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 999px;
+  --size-touch-min: 48px;
+  --size-touch-main: 60px;
+
+  /* Tipografia e sombras */
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-heading: 'Manrope', system-ui, sans-serif;
+  --shadow-sm: 0 4px 12px rgb(23 63 53 / 7%);
+  --shadow-md: 0 8px 24px rgb(23 63 53 / 8%);
+}

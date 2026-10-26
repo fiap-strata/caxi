@@ -1,0 +1,287 @@
+/* Componentes do Design System. Só tokens semânticos; nenhum valor de cor solto. */
+
+/* ---------- Button ---------- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-12);
+  width: 100%;
+  min-height: var(--size-touch-main);
+  padding: var(--space-16) var(--space-20);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font: inherit;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.button.primary .button-label {
+  flex: 1;
+  text-align: left;
+}
+.button.primary,
+.button.whatsapp {
+  background: var(--color-bg-brand);
+  color: var(--color-text-on-brand);
+  box-shadow: var(--shadow-sm);
+}
+.button.primary:hover:not(:disabled),
+.button.whatsapp:hover:not(:disabled) {
+  background: var(--color-bg-brand-hover);
+}
+.button.secondary {
+  background: var(--color-bg-surface);
+  border-color: var(--color-border-default);
+  color: var(--color-text-brand);
+}
+.button.secondary:hover:not(:disabled) {
+  background: var(--color-bg-selected);
+}
+.button.ghost {
+  background: transparent;
+  color: var(--color-text-brand);
+}
+.button.ghost:hover:not(:disabled) {
+  background: var(--color-bg-subtle);
+}
+.button:disabled {
+  cursor: default;
+  opacity: 0.55;
+  box-shadow: none;
+}
+.spin {
+  animation: spin 0.9s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .spin {
+    animation: none;
+  }
+}
+
+/* ---------- Field ---------- */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+.field label,
+.quantity label,
+.choice-group legend {
+  font-size: 17px;
+  font-weight: 600;
+}
+.field-box {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  min-height: var(--size-touch-main);
+  padding: 0 var(--space-16);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-input);
+  border-radius: var(--radius-md);
+}
+.field-box:focus-within {
+  border: 2px solid var(--color-focus-ring);
+  padding: 0 calc(var(--space-16) - 1px);
+}
+.field-box input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 20px;
+  outline: none;
+}
+.field-box input::placeholder {
+  color: var(--color-text-secondary);
+  font-size: 17px;
+}
+.field-prefix {
+  color: var(--color-text-secondary);
+  font-size: 20px;
+}
+.field-help,
+.quantity small {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+.field.has-error .field-box {
+  border: 2px solid var(--color-feedback-error-text);
+  padding: 0 calc(var(--space-16) - 1px);
+}
+.field.has-error .field-help {
+  color: var(--color-feedback-error-text);
+}
+.field:has(input:disabled) {
+  opacity: 0.55;
+}
+.field:has(input:disabled) .field-box {
+  background: var(--color-bg-subtle);
+}
+
+/* ---------- Notice ---------- */
+.notice {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-12);
+  padding: var(--space-12) var(--space-16);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  background: var(--color-feedback-info-bg);
+  color: var(--color-feedback-info-text);
+}
+.notice svg {
+  flex: none;
+  margin-top: 3px;
+}
+.notice.success {
+  background: var(--color-feedback-success-bg);
+  color: var(--color-feedback-success-text);
+}
+.notice.error {
+  background: var(--color-feedback-error-bg);
+  border-color: var(--color-feedback-error-border);
+  color: var(--color-feedback-error-text);
+}
+
+/* ---------- QuantityControl ---------- */
+.quantity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+}
+.quantity-row {
+  display: flex;
+  gap: var(--space-8);
+  width: 100%;
+}
+.quantity-row input {
+  flex: 1;
+  min-width: 0;
+  min-height: var(--size-touch-main);
+  text-align: center;
+  font: inherit;
+  font-size: 28px;
+  color: inherit;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-input);
+  border-radius: var(--radius-md);
+}
+.quantity-row input:focus {
+  outline: none;
+  border: 2px solid var(--color-focus-ring);
+}
+.quantity-step {
+  display: grid;
+  place-items: center;
+  width: var(--size-touch-main);
+  min-height: var(--size-touch-main);
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-brand);
+  color: var(--color-text-on-brand);
+  cursor: pointer;
+}
+.quantity-step:disabled {
+  cursor: default;
+  background: var(--color-bg-subtle);
+  color: var(--color-text-secondary);
+}
+.quantity:has(input:disabled) {
+  opacity: 0.55;
+}
+
+/* ---------- ChoiceGroup ---------- */
+.choice-group {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.choice-group legend {
+  padding: 0;
+  margin-bottom: var(--space-8);
+}
+.choice-options {
+  display: flex;
+  gap: var(--space-12);
+}
+.choice {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  min-height: var(--size-touch-main);
+  padding: 0 var(--space-12);
+  border: 1px solid var(--color-border-input);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-surface);
+  color: var(--color-text-brand);
+  font-weight: 600;
+  cursor: pointer;
+}
+.choice.selected {
+  border: 2px solid var(--color-border-selected);
+  background: var(--color-bg-selected);
+}
+.choice input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.choice:has(input:focus-visible) {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 4px;
+}
+
+/* ---------- StepProgress ---------- */
+.steps-label {
+  margin-bottom: var(--space-8);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+.steps ol {
+  display: flex;
+  gap: var(--space-12);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.steps li {
+  display: grid;
+  place-items: center;
+  width: var(--size-touch-min);
+  height: var(--size-touch-min);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-border-default);
+  background: var(--color-bg-subtle);
+  color: var(--color-text-secondary);
+  font-size: 20px;
+  font-weight: 700;
+}
+.steps li.done {
+  border-color: var(--color-bg-selected);
+  background: var(--color-bg-selected);
+  color: var(--color-text-brand);
+}
+.steps li.current {
+  border-color: var(--color-bg-brand);
+  background: var(--color-bg-brand);
+  color: var(--color-text-on-brand);
+}

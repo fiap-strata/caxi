@@ -1,0 +1,27 @@
+
+> build
+> npm run build -w @caxi/domain && npm run build -w @caxi/api && npm run build -w @caxi/web
+
+
+> build
+> tsc
+
+
+> build
+> tsc -p tsconfig.json
+
+
+> build
+> tsc --noEmit && vite build
+
+vite v6.4.5 building for production...
+transforming...
+✓ 1596 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                          0.59 kB │ gzip:  0.36 kB
+dist/assets/DesignSystem-Epjr44Im.css    8.53 kB │ gzip:  2.08 kB
+dist/assets/index-D0eeIN06.css          22.55 kB │ gzip:  5.69 kB
+dist/assets/DesignSystem-BL4suDAY.js     6.37 kB │ gzip:  2.53 kB
+dist/assets/index-DZEXW8es.js          263.75 kB │ gzip: 81.17 kB
+✓ built in 853ms

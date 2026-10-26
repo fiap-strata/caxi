@@ -1,0 +1,16 @@
+
+> smoke
+> node scripts/smoke.mjs
+
+{
+  "result": "PASS",
+  "environment": "demo",
+  "at": "2026-10-26T22:25:57.795Z",
+  "catalog": "http://127.0.0.1:5173/b/21981abc-acbb-434b-a9c8-a2e3dce288ad",
+  "phone": "11953557705",
+  "completed": 1,
+  "cancelled": 1,
+  "salesCents": 400,
+  "stockKg": 2,
+  "whatsapp": "apenas link; nenhum envio automático"
+}

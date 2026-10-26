@@ -1,0 +1,41 @@
+
+> pretest
+> npm run build -w @caxi/domain
+
+
+> build
+> tsc
+
+
+> test
+> npm run test -w @caxi/domain && npm run test -w @caxi/api
+
+
+> test
+> tsx --test src/*.test.ts
+
+✔ publicação exige produto válido, disponível e estoque positivo (0.586208ms)
+✔ estoque por kg não arredonda incrementos inválidos (0.095208ms)
+✔ unidades são inteiras e preços em centavos (0.169709ms)
+✔ telefone brasileiro normalizado (0.248959ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 115.482875
+
+> test
+> tsx --test test/*.test.ts
+
+✔ interesse → convite → sessão → barraca → produto → publicação e isolamento (1564.279ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1747.339208

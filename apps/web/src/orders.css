@@ -1,0 +1,127 @@
+.orders-panel {
+  margin: 28px auto;
+  padding: 24px;
+  max-width: 640px;
+  border: 1px solid #dce6de;
+  border-radius: 16px;
+  background: #fff;
+  color: #24392c;
+}
+.orders-panel h2,
+.orders-panel h3 {
+  margin: 0 0 16px;
+}
+.orders-panel form {
+  display: grid;
+  gap: 14px;
+}
+.orders-panel label {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+}
+.orders-panel input,
+.orders-panel select,
+.orders-panel textarea {
+  padding: 12px;
+  border: 1px solid #9eafa2;
+  border-radius: 8px;
+  font: inherit;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.orders-product {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+.orders-product input {
+  max-width: 88px;
+}
+.orders-action {
+  display: inline-block;
+  border: 0;
+  border-radius: 9px;
+  padding: 14px 18px;
+  background: #205a3a;
+  color: white !important;
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+}
+.orders-action:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.seller-order {
+  border-top: 1px solid #ddd;
+  padding: 16px 0;
+}
+.seller-order p {
+  margin: 7px 0;
+}
+.order-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.order-buttons button,
+.orders-panel > button {
+  padding: 10px;
+  border: 1px solid #789580;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+}
+
+/* Resumo exclusivo do feirante */
+.owner-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 14px 0;
+}
+.owner-stats > div {
+  border: 1px solid #dce5d5;
+  border-radius: 9px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.owner-stats strong {
+  font-size: 1.15rem;
+  color: #173f32;
+}
+.owner-stats span {
+  font-size: 0.76rem;
+}
+.owner-stock {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 14px;
+}
+.owner-stock li {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  border-bottom: 1px solid #e6e9e0;
+  padding: 9px 0;
+}
+.owner-stock li span {
+  flex: 1;
+}
+.owner-stock li small {
+  color: #607a62;
+}
+@media (max-width: 500px) {
+  .owner-stats {
+    grid-template-columns: 1fr;
+  }
+}

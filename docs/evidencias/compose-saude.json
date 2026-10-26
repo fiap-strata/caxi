@@ -1,0 +1,20 @@
+[
+  {
+    "Service": "api",
+    "State": "running",
+    "Health": "healthy",
+    "Ports": "3001/tcp"
+  },
+  {
+    "Service": "postgres",
+    "State": "running",
+    "Health": "healthy",
+    "Ports": "127.0.0.1:5432->5432/tcp"
+  },
+  {
+    "Service": "web",
+    "State": "running",
+    "Health": "healthy",
+    "Ports": "127.0.0.1:8080->8080/tcp"
+  }
+]
