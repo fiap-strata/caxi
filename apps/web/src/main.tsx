@@ -6,7 +6,6 @@ import {
   CheckCheck,
   Copy,
   ExternalLink,
-  Leaf,
   Link,
   LogOut,
   Package,
@@ -27,6 +26,7 @@ import { Brand, Button, Field, Notice } from './design-system';
 import './styles.css';
 import './simple-ui.css';
 import { Catalog } from './Catalog';
+import { Landing } from './Landing';
 import { Checkout, SellerOrders, SellerOverview } from './Orders';
 import type { Product, Stall } from './models';
 type Stage =
@@ -242,6 +242,14 @@ function App() {
       <header className="topbar">
         <Brand />
         <div className="top-actions">
+          {stage === 'welcome' ? (
+            <nav className="landing-nav" aria-label="Navegação da página">
+              <a href="#sobre">O projeto</a>
+              <a href="#como-funciona">Como funciona</a>
+              <a href="#recursos">Recursos</a>
+              <a href="#duvidas">Dúvidas</a>
+            </nav>
+          ) : null}
           <span className="top-note">
             <ShieldCheck size={15} /> Feito para quem vive da feira
           </span>
@@ -280,75 +288,7 @@ function App() {
       ) : null}
       {stage === 'welcome' && error ? <Notice tone="error">{error}</Notice> : null}
       {stage === 'welcome' ? (
-        <main className="landing">
-          <section className="hero">
-            <div className="hero-copy">
-              <h1>
-                Sua barraca
-                <br />
-                <em>na internet.</em>
-              </h1>
-              <p>Mostre seus produtos e preços para seus clientes.</p>
-              <Button onClick={() => go('interest')}>Criar minha barraca</Button>
-              <span className="hero-footnote">
-                <CheckCheck size={18} /> Não precisa instalar nada.
-              </span>
-              <div className="hero-stats">
-                <span>
-                  <Store aria-hidden="true" />
-                  <b>1</b> Nome
-                </span>
-                <span>
-                  <Camera aria-hidden="true" />
-                  <b>2</b> Produto
-                </span>
-                <span>
-                  <MessageCircle aria-hidden="true" />
-                  <b>3</b> WhatsApp
-                </span>
-              </div>
-            </div>
-            <div className="hero-art" aria-label="Ilustração de uma barraca com vegetais">
-              <div className="art-orbit" />
-              <div className="art-tag">
-                <Leaf size={16} /> Sua barraca
-              </div>
-              <div className="illustrated-stall">
-                <div className="awning-top" />
-                <div className="awning">
-                  <i />
-                  <i />
-                  <i />
-                  <i />
-                  <i />
-                </div>
-                <div className="stall-sign">DA NOSSA HORTA</div>
-                <div className="veggies">
-                  <span>🥬</span>
-                  <span>🥕</span>
-                  <span>🍅</span>
-                  <span>🥦</span>
-                </div>
-                <div className="stall-counter">
-                  <Sprout size={34} />
-                  <b>feito com cuidado.</b>
-                </div>
-              </div>
-              <div className="floating-note">
-                <span className="note-check">
-                  <Check size={18} />
-                </span>
-                <div>
-                  <b>Sua barraca está online!</b>
-                  <small>Pronta para mostrar aos clientes.</small>
-                </div>
-              </div>
-            </div>
-          </section>
-          <footer className="site-footer">
-            <span>Caxi · Sua barraca online.</span>
-          </footer>
-        </main>
+        <Landing onStart={() => go('interest')} onLogin={() => go('login')} />
       ) : (
         <main className="workspace">
           <aside className="journey-aside">
