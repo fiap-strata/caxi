@@ -10,6 +10,7 @@ Os serviços `api` e `web` são construídos pelo `vercel.json` da raiz.
 | `main`    | Versão apresentada/publicada        | Produção na Vercel, em `https://caxi.vercel.app` |
 
 `main` permanece como branch padrão do GitHub e branch de produção da Vercel.
+O `vercel.json` habilita explicitamente os deploys de `main` e `develop`.
 Branches de funcionalidade também podem receber previews pela integração nativa;
 o fluxo de integração recomendado é `feature/*` → `develop` → `main`.
 
