@@ -6,7 +6,7 @@ Referência vigente: **Challenge Sprint 2 — Turma de Quarta (4ESPR)**, PDF inf
 |---|---|---|
 | Business Intelligence e Startup Development | Ajustes no CP3, evolução do MVP e primeiro valor operando | [BI: evolução e demonstração](BI.md), aplicação e [validação](../VALIDACAO.md) |
 | Robotic Process Automation | Processo mapeado de ponta a ponta, etapas, responsáveis, entradas/saídas e candidatos à automação | [Processo operacional](RPA.md) |
-| Secure DevOps Tools & Cloud Computing | Mapa de infraestrutura on-premise ou cloud e processo detalhado de desenvolvimento, pipeline, ambientes e segurança | [Infraestrutura e desenvolvimento](DEVOPS.md), [Compose](../../compose.yaml) e [CI](../../.github/workflows/ci.yml) |
+| Secure DevOps Tools & Cloud Computing | Mapa de infraestrutura on-premise ou cloud e processo detalhado de desenvolvimento, pipeline, ambientes e segurança | [Infraestrutura e desenvolvimento](DEVOPS.md), [PDF e diagrama do Enzo](../arquitetura/enzo/README.md), [Compose](../../compose.yaml) e [CI](../../.github/workflows/ci.yml) |
 
 O grupo considera o CP3 anterior concluído com MVP 0, especificações e landing/lista de espera. Esta entrega trata da **Sprint 2**, sem reconstruir nem reapresentar um pacote de CP3/MVP 0. A landing page permanece na aplicação e participa do funil de aquisição.
 
