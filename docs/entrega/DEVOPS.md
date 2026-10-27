@@ -1,5 +1,13 @@
 # Secure DevOps Tools & Cloud Computing
 
+## Materiais de arquitetura entregues por Enzo
+
+- [Documento explicativo original em PDF](../arquitetura/enzo/como-funciona-a-arquitetura.pdf).
+- [Diagrama original em PNG](../arquitetura/enzo/caxi-arquitetura.png).
+- [Fonte editável recuperada do PNG, em draw.io](../arquitetura/enzo/caxi-arquitetura.drawio).
+
+O [índice dos materiais](../arquitetura/enzo/README.md) relaciona o plano AWS à implementação consolidada e identifica diferenças de configuração. Os arquivos originais estão preservados como parte da entrega de DevOps.
+
 ## Mapa do ambiente de demonstração
 
 ```mermaid
@@ -17,7 +25,9 @@ Alternativa sem Docker: Vite em `127.0.0.1:5173` encaminha `/api` e `/uploads` p
 
 ## Proposta cloud
 
-![Mapa AWS proposto por Enzo](../arquitetura/aws-proposta-enzo.svg)
+![Mapa AWS proposto por Enzo](../arquitetura/enzo/caxi-arquitetura.png)
+
+[Explicação completa da arquitetura](../arquitetura/enzo/como-funciona-a-arquitetura.pdf) · [Abrir fonte editável](../arquitetura/enzo/caxi-arquitetura.drawio). O [SVG anteriormente recebido](../arquitetura/aws-proposta-enzo.svg) permanece como referência.
 
 Esse desenho é uma proposta de infraestrutura, não evidência de recursos implantados. A base de provisionamento de identidade está em `infrastructure/main.tf` e `infrastructure/whatsapp-sender/`.
 

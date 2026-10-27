@@ -21,6 +21,10 @@ Os bancos SQLite, uploads de demonstração, caches, builds e `node_modules` con
 
 O conector remoto informou falta de permissão e o navegador recebeu HTTP 403. O grupo forneceu depois uma exportação `.fig`, inspecionada localmente: [fonte e inventário](../design/README.md). A vitrine deriva dos componentes de Enzo; a comparação estrutural confirmou 55 de 57 valores de tokens, com diferenças de raio documentadas. A página de telas de referência está vazia. Não se declara auditoria visual completa das variantes.
 
+## Arquitetura de DevOps — materiais de Enzo
+
+O [PDF explicativo, PNG original e fonte draw.io recuperada](arquitetura/enzo/README.md) integram a entrega de DevOps. Os originais foram preservados; o índice explicita as diferenças entre a arquitetura AWS proposta e o ambiente consolidado.
+
 ## Documentos acadêmicos
 
 O PDF **Challenge Sprint 2 — Turma de Quarta (4ESPR)** enviado em 26/10 é a referência vigente. A entrega de BI considera o CP3 anterior concluído, conforme orientação do grupo. Não foi criado um novo pacote CP3/MVP 0. RPA cobre processo mapeado; DevOps cobre infraestrutura e desenvolvimento.
